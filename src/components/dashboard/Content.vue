@@ -47,31 +47,7 @@ export default {
   },
   mounted() {
     let _this = this;
-
-    let promise1 = new Promise(function (resolve, reject) {
-      _this.$myaxios.get('/dashboard-commondata').then(function (response) {
-        _this.commondata = response.data;
-        resolve(response);
-      }).catch(function (err) {
-        console.error(err);
-        reject(err);
-      });
-    });
-
-    let promise2 = new Promise(function (resolve, reject) {
-      _this.$myaxios.get('/dashboard-commondata').then(function (response) {
-        _this.data = response.data;
-        resolve(response);
-      }).catch(function (err) {
-        console.error(err);
-        reject(err);
-      });
-    });
-
-    this.$globalEventHub.$emit('appLoading', true);
-    Promise.all([promise1, promise2]).finally(function (dd) {
-      _this.$globalEventHub.$emit('appLoading', false);
-    });
+ 
 
   },
   methods: {

@@ -8,53 +8,18 @@ export default new Router({
     {
       name: 'index',
       path: '/',
-      redirect: { name: 'login' }
-    },
+      redirect: { name: 'dashboard' }
+    }, 
     {
-      name: 'login',
-      path: '/login',
-      component: resolve => require(['../components/login/Content.vue'], resolve),
-      meta: { title: 'login' }
-    },
-    {
-      path: '/operator',
-      component: resolve => require(['../components/framework/Root.vue'], resolve),
-      meta: { title: 'operator' },
-      children: [
-        //operator
+      path: '/',
+      component: resolve => require(['../components/framework/Root.vue'], resolve), 
+      children: [ 
         {
-          name: 'device',
-          path: '/device',
-          component: resolve => require(['../components/device/Content.vue'], resolve),
-          meta: { title: 'device' }
-        },
-        {
-          name: 'page',
-          path: '/page',
-          component: resolve => require(['../components/page/Content.vue'], resolve),
-          meta: { title: 'page' }
-        },
-        {
-          name: 'message',
-          path: '/message',
-          component: resolve => require(['../components/message/Content.vue'], resolve),
-          meta: { title: 'message' }
-        },
+          name: 'dashboard',
+          path: '/dashboard',
+          component: resolve => require(['../components/dashboard/Content.vue'], resolve), 
+        }
       ]
-    },
-    {
-      path: '/admin',
-      component: resolve => require(['../components/framework/Root.vue'], resolve),
-      meta: { title: 'admin' },
-      children: [
-        //admin
-        {
-          name: 'group',
-          path: '/group',
-          component: resolve => require(['../components/group/Content.vue'], resolve),
-          meta: { title: 'group' }
-        },
-      ]
-    },
+    }
   ]
 })

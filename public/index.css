@@ -4,6 +4,26 @@ body {
     overflow: hidden;
 }
 
+.color-primary { 
+    background-color: #878f92 !important;
+}
+
+.color-primary-2 { 
+    background-color: #e50112 !important;
+}
+
+.color-primary-3 { 
+    background-color: #d3d3d3 !important;
+}
+
+.color-primary-4 { 
+    background-color: #505050 !important;
+}
+
+.color-text-white { 
+    color: #fff !important;
+}
+
 /*主页面*/
 
 @media screen and (max-width: 1087px) {

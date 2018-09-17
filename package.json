@@ -1,7 +1,7 @@
 {
-  "name": "ggjadminv3",
+  "name": "cement-burner-system",
   "version": "1.0.0",
-  "description": "ggjadminv3",
+  "description": "水泥回转窑燃烧温度场系统",
   "main": "",
   "scripts": {
     "dev": "webpack --watch --config build/webpack.config.dev.js",

@@ -1,6 +1,6 @@
 <template>
     <!-- Hero head: will stick at the top -->
-    <div class="hero-head">
+    <div class="hero-head" style="border-bottom: 5px solid #e50112;">
         <nav class="navbar ">
             <div class="navbar-brand">
                 <a class="navbar-item" @click="showDrawer">
@@ -10,20 +10,8 @@
             <div class="navbar-menu">
                 <div class="navbar-end">
                     <a class="navbar-item">
-                        Home
-                    </a>
-                    <a class="navbar-item">
-                        Config
-                    </a>
-                    <a class="navbar-item">
                         About
-                    </a>
-                    <span class="navbar-item">
-                        <a class="button is-primary is-inverted">
-                            <b-icon icon="account"></b-icon>
-                            <span>Login</span>
-                        </a>
-                    </span>
+                    </a> 
                 </div>
             </div>
         </nav>

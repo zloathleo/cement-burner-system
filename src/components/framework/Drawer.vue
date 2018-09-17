@@ -1,24 +1,32 @@
 <template>
 
     <div>
-        <div v-show="isShowDraw" class="modal-background" @click="isShowDraw = false"></div> 
+        <div v-show="isShowModal" class="modal-background" @click="isShowModal = false"></div>
         <transition name="slide-fade">
-            <div v-show="isShowDraw" class="drawer-content"> 
-                <div class="side-header">
-                    <b-icon icon="google-circles" size="is-small">
-                    </b-icon>
-                    <span class="side-header-appname">{{appName}}</span>
-                </div> 
-                <a class="dropdown-item" v-for="item in items" v-bind:class="{ 'is-active': selectedKey == item.key }" @click="clickMenu(item.key)">
-                    <div class="media">
-                        <span class="icon media-left">
-                            <b-icon icon="view-dashboard" />
-                        </span>
-                        <div class="media-content">
-                            <h3>{{item.display}}</h3>
-                            <small>{{item.display}}</small>
-                        </div>
-                    </div>
+            <div v-show="isShowDraw" class="drawer-content color-primary-4">
+                <a class="dropdown-item color-text-white" @click="clickMenu('dashboard')">
+                    <span class="icon" style="padding-bottom: 1.5rem;">
+                        <b-icon icon="view-dashboard" />
+                    </span>
+                    <h3> Burner<br> Overview </h3>
+                </a>
+                <a class="dropdown-item color-text-white" @click="clickMenu('dashboard')">
+                    <span class="icon" style="padding-bottom: 1.5rem;">
+                        <b-icon icon="view-dashboard" />
+                    </span>
+                    <h3> Temperature<br> control </h3>
+                </a>
+                <a class="dropdown-item color-text-white" @click="clickMenu('dashboard')">
+                    <span class="icon" style="padding-bottom: 1.5rem;">
+                        <b-icon icon="view-dashboard" />
+                    </span>
+                    <h3> Setting </h3>
+                </a>
+                <a class="dropdown-item color-text-white" @click="clickMenu('dashboard')">
+                    <span class="icon" style="padding-bottom: 1.5rem;">
+                        <b-icon icon="view-dashboard" />
+                    </span>
+                    <h3> Alarms </h3>
                 </a>
             </div>
         </transition>
@@ -28,26 +36,22 @@
 </template>
 
 <style scoped lang="less">
-.side-header {
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  max-width: 100%;
-  .side-header-appname {
-    font-weight: 600;
-  }
+.dropdown-item {
+  line-height: 1.3;
+  padding: 1rem;
+  text-align: center;
 }
 .modal-background {
-  z-index: 40;
+  z-index: 20;
   background-color: rgba(10, 10, 10, 0.5);
 }
 .drawer-content {
-  position: absolute;
-  width: 240px;
+  position: fixed;
+  width: 7rem;
+  padding-top: 3rem;
   height: 100%;
-  top: 0px;
-  left: 0px;
-  z-index: 50;
-  background-color: #f9f9f9;
+  z-index: 30;
+  color: #fff;
 }
 /* 可以设置不同的进入和离开动画 */
 /* 设置持续时间和动画函数 */
@@ -70,6 +74,7 @@ export default {
     data() {
         return {
             isShowDraw: false,
+            isShowModal: false,
             selectedKey: undefined,
             appName: "后台管理",
             items: undefined,
@@ -80,7 +85,7 @@ export default {
         this.selectedKey = stateMem.state.currentRouteName;
         let _this = this;
         this.$globalEventHub.$on("showDrawer", function () {
-            _this.isShowDraw = true;
+            _this.isShowDraw = !_this.isShowDraw;
         });
     },
 
