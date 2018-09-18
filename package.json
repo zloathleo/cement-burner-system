@@ -2,8 +2,24 @@
   "name": "cement-burner-system",
   "version": "1.0.0",
   "description": "水泥回转窑燃烧温度场系统",
-  "main": "",
+  "main": "electron-main.js",
+  "build": {
+    "appId": "com.safefire.cement",
+    "productName": "safefire-cement",
+    "copyright": "Copyright © 2018 safefire",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "./**/*"
+    ],
+    "win": {
+      "icon": "./build/resources/logo256.png"
+    }
+  },
   "scripts": {
+    "start": "electron .",
+    "packexe": "electron-builder --ia32",
     "dev": "webpack --watch --config build/webpack.config.dev.js",
     "devone": "webpack --config build/webpack.config.dev.js",
     "devs": "webpack-dev-server --open --progress --config build/webpack.config.dev.js",
@@ -37,6 +53,8 @@
     "compression-webpack-plugin": "^1.1.11",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
+    "electron": "^2.0.6",
+    "electron-builder": "^20.27.1",
     "eslint": "^5.0.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-loader": "^2.0.0",
