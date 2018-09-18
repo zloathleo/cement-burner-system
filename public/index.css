@@ -4,24 +4,51 @@ body {
     overflow: hidden;
 }
 
-.color-primary { 
+.color-primary {
     background-color: #878f92 !important;
 }
 
-.color-primary-2 { 
+.color-primary-2 {
     background-color: #e50112 !important;
 }
 
-.color-primary-3 { 
+.color-primary-3 {
     background-color: #d3d3d3 !important;
 }
 
-.color-primary-4 { 
+.color-primary-4 {
     background-color: #505050 !important;
+    color: #fff !important;
 }
 
-.color-text-white { 
+.color-text-white {
     color: #fff !important;
+}
+
+.card-bg-transparent {
+    background-color: transparent !important;
+}
+
+.card-content-table {
+    padding: 0rem;
+}
+
+.table-td-left {
+    border: 1px solid #000 !important;
+    width: 20%;
+    padding: 1rem !important;
+    font-weight: bold;
+}
+
+.table-td {
+    border: 1px solid #000 !important;
+    padding: 1rem !important;
+    font-weight: bold;
+}
+
+.card-header {
+    font-size: 1.6rem;
+    padding: 0.4rem 1rem;
 }
 
 /*主页面*/

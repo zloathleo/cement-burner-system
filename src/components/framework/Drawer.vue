@@ -10,19 +10,19 @@
                     </span>
                     <h3> Burner<br> Overview </h3>
                 </a>
-                <a class="dropdown-item color-text-white" @click="clickMenu('dashboard')">
+                <a class="dropdown-item color-text-white" @click="clickMenu('tpcontrol')">
                     <span class="icon" style="padding-bottom: 1.5rem;">
                         <b-icon icon="view-dashboard" />
                     </span>
                     <h3> Temperature<br> control </h3>
                 </a>
-                <a class="dropdown-item color-text-white" @click="clickMenu('dashboard')">
+                <a class="dropdown-item color-text-white" @click="clickMenu('settings')">
                     <span class="icon" style="padding-bottom: 1.5rem;">
                         <b-icon icon="view-dashboard" />
                     </span>
                     <h3> Setting </h3>
                 </a>
-                <a class="dropdown-item color-text-white" @click="clickMenu('dashboard')">
+                <a class="dropdown-item color-text-white" @click="clickMenu('alarm')">
                     <span class="icon" style="padding-bottom: 1.5rem;">
                         <b-icon icon="view-dashboard" />
                     </span>
@@ -48,7 +48,7 @@
 .drawer-content {
   position: fixed;
   width: 7rem;
-  padding-top: 3rem;
+  padding-top: 1rem;
   height: 100%;
   z-index: 30;
   color: #fff;
@@ -94,7 +94,7 @@ export default {
             this.selectedKey = key;
             this.isShowDraw = false;
             this.$router.push({ name: key });
-            this.$globalEventHub.$emit("appLoading", true);
+            // this.$globalEventHub.$emit("appLoading", true);
         },
     }
 }

@@ -1,15 +1,17 @@
 <template>
 
-    <div>
+    <div style="height: 100%;">
         <section class="hero color-primary-3">
             <Toolbar />
         </section>
         <b-loading :is-full-page="true" :active.sync="isAppLoading"></b-loading>
         <Drawer />
 
-        <main class="main-container">
+        <main class="main-container color-primary-3">
             <div class="content">
-                <router-view></router-view>
+                <transition name="fade">
+                    <router-view></router-view>
+                </transition>
             </div>
             <Footer />
         </main>
@@ -20,14 +22,21 @@
 
 <style scoped lang="less">
 .main-container {
-  min-height: 1048px;
-  background-color: #f5f5f5;
+  height: 100%;
   .content {
-    background-color: white;
-    margin: 0px 20px;
-    padding: 20px;
-    max-width: 100%;
+    padding: 2rem;
   }
+}
+.fade-enter-active {
+  transition: all 0.3s ease;
+}
+.fade-leave-active {
+  transition: all 0s;
+}
+.fade-enter,
+.fade-leave-to {
+  transform: translateY(300px);
+  opacity: 0;
 }
 </style>
 

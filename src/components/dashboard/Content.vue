@@ -1,38 +1,58 @@
 <template>
-  <nav class="level">
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Tweets</p>
-        <p class="title">{{commondata.d1}}</p>
+  <div>
+    <div class="columns">
+      <div class="column is-half">
+        <div class="card card-bg-transparent">
+          <div class="card-header color-primary-4">
+            Temperature pattern
+          </div>
+          <div class="card-content">
+            <RoundChart />
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-half">
+        <div class="card card-bg-transparent">
+          <div class="card-header color-primary-4">
+            Temperature Radar
+          </div>
+          <div class="card-content">
+            <RadarChart />
+          </div>
+        </div>
       </div>
     </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Following</p>
-        <p class="title">{{commondata.d2}}</p>
+
+    <div class="columns">
+      <div class="column">
+        <div class="card card-bg-transparent">
+          <div class="card-header color-primary-4">
+            Temperature History
+          </div>
+          <div class="card-content">
+            <LineChart />
+          </div>
+        </div>
       </div>
     </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Followers</p>
-        <p class="title">{{commondata.d3}}</p>
-      </div>
-    </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="heading">Likes</p>
-        <p class="title">{{commondata.d4}}</p>
-      </div>
-    </div>
-  </nav>
+  </div>
+
 </template>
 
-<style>
+<style scoped lang="less">
+.card-content {
+  // padding: 0rem;
+}
 </style>
 
 <script> 
+import RoundChart from './RoundChart.vue';
+import RadarChart from './RadarChart.vue';
+import LineChart from './LineChart.vue';
 export default {
   components: {
+    RoundChart, RadarChart, LineChart
   },
   data() {
     return {
@@ -47,7 +67,7 @@ export default {
   },
   mounted() {
     let _this = this;
- 
+
 
   },
   methods: {

@@ -4,7 +4,7 @@
     <div class="card-header color-primary-4">
       Temperature pattern
     </div>
-    <div class="card-content-table">
+    <div class="card-content">
       <table class="table is-bordered  is-fullwidth card-bg-transparent">
         <tbody>
           <tr>
@@ -22,7 +22,10 @@
 
 </template>
 
-<style scoped lang="less"> 
+<style scoped lang="less">
+.card-content {
+  padding: 0rem;
+}
 </style>
 
 <script> 
