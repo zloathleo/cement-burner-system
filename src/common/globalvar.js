@@ -2,8 +2,12 @@ export default {
     appName: "后台管理",
     GlobalEventHub: undefined,
 
+
+    //配置模式 直接查看数据和控制信号
+    configMode: true,
+
     // fetchServerHostURL: "",
-    fetchServerHostURL: "http://116.62.150.38:8080/ggmanager/",
+    fetchServerHostURL: "http://192.168.0.79:8080",
 
     adminMenuItems: [
         {

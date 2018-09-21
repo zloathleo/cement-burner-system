@@ -5,26 +5,26 @@
         <transition name="slide-fade">
             <div v-show="isShowDraw" class="drawer-content color-primary-4">
                 <a class="dropdown-item color-text-white" @click="clickMenu('dashboard')">
-                    <span class="icon" style="padding-bottom: 1.5rem;">
-                        <b-icon icon="view-dashboard" />
+                    <span class="icon" style="padding-bottom: 1.5rem;"> 
+                        <img src="assets/img/dashboard.png">
                     </span>
                     <h3> Burner<br> Overview </h3>
                 </a>
                 <a class="dropdown-item color-text-white" @click="clickMenu('tpcontrol')">
-                    <span class="icon" style="padding-bottom: 1.5rem;">
-                        <b-icon icon="view-dashboard" />
+                    <span class="icon" style="padding-bottom: 1.5rem;"> 
+                        <img src="assets/img/dashboard.png">
                     </span>
                     <h3> Temperature<br> control </h3>
                 </a>
                 <a class="dropdown-item color-text-white" @click="clickMenu('settings')">
                     <span class="icon" style="padding-bottom: 1.5rem;">
-                        <b-icon icon="view-dashboard" />
+                        <img src="assets/img/settings.png">
                     </span>
                     <h3> Setting </h3>
                 </a>
                 <a class="dropdown-item color-text-white" @click="clickMenu('alarm')">
                     <span class="icon" style="padding-bottom: 1.5rem;">
-                        <b-icon icon="view-dashboard" />
+                        <img src="assets/img/alarm.png">
                     </span>
                     <h3> Alarms </h3>
                 </a>
@@ -68,8 +68,7 @@
 }
 </style>
 
-<script>
-import stateMem from '../../common/state-mem';
+<script> 
 export default {
     data() {
         return {
@@ -81,8 +80,8 @@ export default {
         }
     },
     mounted() {
-        this.items = stateMem.state.menuItems;
-        this.selectedKey = stateMem.state.currentRouteName;
+        this.items = this.$stateMem.state.menuItems;
+        this.selectedKey = this.$stateMem.state.currentRouteName;
         let _this = this;
         this.$globalEventHub.$on("showDrawer", function () {
             _this.isShowDraw = !_this.isShowDraw;

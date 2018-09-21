@@ -12,7 +12,7 @@ const ipcMain = electron.ipcMain
 const Menu = electron.Menu
 const Tray = electron.Tray
 
-// const logoImagePath = path.join(__dirname, '/logo.png');
+const logoImagePath = path.join(__dirname, '/public/assets/img/logo256.png');
 const appLoginPath = path.join('file://', __dirname, '/public/index.html');
 
 let mainWindow;
@@ -30,9 +30,9 @@ function _showMainWindow() {
 
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        frame: false,
+        frame: true,
         center: true,
-        // icon: logoImagePath,
+        icon: logoImagePath,
         width: 1024,
         height: 768,
         autoHideMenuBar: true,

@@ -15,6 +15,11 @@ export default new Router({
       component: resolve => require(['../components/framework/Root.vue'], resolve),
       children: [
         {
+          name: 'testconfig',
+          path: '/testconfig',
+          component: resolve => require(['../components/testconfig/Content.vue'], resolve),
+        },
+        {
           name: 'dashboard',
           path: '/dashboard',
           component: resolve => require(['../components/dashboard/Content.vue'], resolve),

@@ -13,9 +13,8 @@
                     <router-view></router-view>
                 </transition>
             </div>
-            <Footer />
         </main>
-
+        <Footer />
     </div>
 
 </template>
@@ -46,7 +45,7 @@ import Toolbar from './Toolbar.vue';
 import Drawer from './Drawer.vue';
 import Footer from './Footer.vue';
 export default {
-    components: { Toolbar, Drawer },
+    components: { Toolbar, Drawer, Footer },
 
     data() {
         return {
@@ -57,7 +56,11 @@ export default {
         let _this = this;
         this.$globalEventHub.$on("appLoading", function (value) {
             _this.isAppLoading = value;
-        });
+        }); 
+
+        if (this.$globalvar.configMode) {
+            this.$router.replace({ name: "testconfig" });
+        }
     },
     methods: {
     }

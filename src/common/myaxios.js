@@ -7,10 +7,10 @@ axios.defaults.baseURL = globalvar.fetchServerHostURL;
 //设置默认请求头
 axios.defaults.headers = {
     'Content-Type': 'application/x-www-form-urlencoded',
-    'Cache-Control': 'no-cache,no-store',
+    // 'Cache-Control': 'no-cache,no-store',
 }
 
-axios.defaults.timeout = 10000;
+axios.defaults.timeout = 6000;
 
 //不使用URLSearchParams  
 axios.defaults.transformRequest = [function (data) {
@@ -25,27 +25,36 @@ axios.defaults.transformRequest = [function (data) {
             return data;
         }
 
-    } 
+    }
 }];
 
 //请求拦截器
 axios.interceptors.request.use(function (config) {
-    console.log("request use:", config);
-    globalvar.GlobalEventHub.$emit('appLoading', true);
+    if (!config.hiddenLoading) {
+        globalvar.GlobalEventHub.$emit('appLoading', true);
+    }
     return config;
 }, function (error) {
-    globalvar.GlobalEventHub.$emit('appLoading', true);
+    if (!config.hiddenLoading) {
+        globalvar.GlobalEventHub.$emit('appLoading', true);
+    }
     return Promise.reject(error);
 });
 
 // 添加响应拦截器
 axios.interceptors.response.use(function (response) {
-    console.log("response use:", response);
-    globalvar.GlobalEventHub.$emit('appLoading', false);
+    if (!response.config.hiddenLoading) {
+        globalvar.GlobalEventHub.$emit('appLoading', false);
+    }
     return response;
 }, function (error) {
-    globalvar.GlobalEventHub.$emit('appLoading', false);
+    if (!error.config.hiddenLoading) {
+        globalvar.GlobalEventHub.$emit('appLoading', false);
+    }
     return Promise.reject(error);
+
+
+
 });
 
 //响应拦截器即异常处理

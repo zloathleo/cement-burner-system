@@ -15,7 +15,7 @@ const vuePkg = [
 
 module.exports = {
   entry: {
-    index: utils.resolve('src/index.js'),
+    index: utils.resolve('src/index.js'), 
     vue: vuePkg,
   },
 

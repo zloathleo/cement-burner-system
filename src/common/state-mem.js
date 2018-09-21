@@ -6,9 +6,14 @@ const store = new Vuex.Store({
         user: undefined,
         dashboardRouteName: undefined,
         currentRouteName: undefined,
-        menuItems: undefined
+        menuItems: undefined,
+        serverTimestamp: 0,
     },
     mutations: {
+        setServerTimestamp: function (state, value) { 
+            state.serverTimestamp = value;
+        },
+
         initUserUI: function (state, value) {
             state.user = value;
             if (value === undefined) {
