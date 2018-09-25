@@ -7,7 +7,7 @@ export default {
     configMode: true,
 
     // fetchServerHostURL: "",
-    fetchServerHostURL: "http://192.168.0.79:8080",
+    fetchServerHostURL: "http://localhost:8080",
 
     adminMenuItems: [
         {

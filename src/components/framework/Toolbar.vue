@@ -9,9 +9,9 @@
             </div>
             <div class="navbar-menu">
                 <div class="navbar-end">
-                    <a class="navbar-item">
-                        <b-icon icon="view-headline"></b-icon>
-                    </a>
+                    <div class="navbar-item" style="font-size: 14px;">
+                        <i class="mdi mdi-eye mdi-24px" style="color: rgb(125, 125, 125);"></i> 
+                    </div>
                 </div>
             </div>
         </nav>

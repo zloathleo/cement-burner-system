@@ -21,6 +21,11 @@ body {
     color: #fff !important;
 }
 
+.color-primary-button {
+    background-color: #878f92 !important;
+    color: #fff !important;
+}
+
 .color-text-white {
     color: #fff !important;
 }
